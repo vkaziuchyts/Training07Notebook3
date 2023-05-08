@@ -15,6 +15,7 @@ public final class MenuBuilder {
 		cm1.setItems(MenuCommand.CREATE_NEW_ITEM.getConsoleCode(), "Создать новую запись.");
 		cm1.setItems(MenuCommand.SHOW_FIND_MENU.getConsoleCode(), "Найти запись.");
 		cm1.setItems(MenuCommand.EXIT_CODE.getConsoleCode(), "Завершить работу приложения.");
+		cm1.setItems(MenuCommand.SHOW_ALL_NOTES.getConsoleCode(), "Показать все записи");
 
 		menuSystem.add(Menu.MAIN_MENU, cm1);
 

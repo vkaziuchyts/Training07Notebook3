@@ -14,7 +14,7 @@ public class ConsoleShowMainMenu implements Command {
 	private MenuSelectionSystem menuSystem = MenuBuilder.getInstance().getMenuSystem();
 	private Display display = MenuBuilder.getInstance().getDisplay();
 	private InputTerminal terminal = MenuBuilder.getInstance().getTerminal();
-	
+
 	@Override
 	public void execute() {
 		ConcreteMenu menu;

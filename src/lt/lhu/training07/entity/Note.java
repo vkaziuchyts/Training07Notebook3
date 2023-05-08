@@ -6,29 +6,29 @@ import java.util.Objects;
 import lt.lhu.training07.util.GenerateId;
 
 public class Note {
-	
+
 	private int id;
 	private String title;
 	private String content;
 	private Date d;
-	
-	public Note() {}
 
-	
+	public Note() {
+	}
+
 	public Note(int id, String title, String content, Date d) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.d = d;
-	}	
-	
+	}
+
 	public Note(String title, String content, Date d) {
 		this.id = GenerateId.nextId();
 		this.title = title;
 		this.content = content;
 		this.d = d;
 	}
-	
+
 	public Note(String title, String content) {
 		this.id = GenerateId.nextId();
 		this.title = title;
@@ -36,52 +36,42 @@ public class Note {
 		this.d = new Date();
 	}
 
-
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public String getTitle() {
 		return title;
 	}
-
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-
 	public String getContent() {
 		return content;
 	}
-
 
 	public void setContent(String content) {
 		this.content = content;
 	}
 
-
 	public Date getD() {
 		return d;
 	}
-
 
 	public void setD(Date d) {
 		this.d = d;
 	}
 
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(content, d, id, title);
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -96,10 +86,9 @@ public class Note {
 				&& Objects.equals(title, other.title);
 	}
 
-
 	@Override
 	public String toString() {
 		return "Note [id=" + id + ", title=" + title + ", content=" + content + ", d=" + d + "]";
-	}	
+	}
 
 }

@@ -2,16 +2,23 @@ package lt.lhu.training07.input;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import lt.lhu.training07.entity.Note;
 
 public class Display {
 
-	public void printMenu(ConcreteMenu m) {
-		// System.out.println(m.getTitle());
+	public void printMenu(ConcreteMenu menu) {
 
-		Set<Map.Entry<Integer, String>> items = m.getItems();
-		for (Map.Entry<Integer, String> item : items) {
+		for (Map.Entry<Integer, String> item : menu.getItems()) {
 			System.out.println(item.getKey() + " " + item.getValue());
+		}
+	}
+
+	public void printNotes(List<Note> notes) {
+		String message = (notes == null || notes.isEmpty()) ? "Заметки не найдены" : "";
+		System.out.println(message);
+		for (Note note : notes) {
+			System.out.println(note);
 		}
 	}
 }

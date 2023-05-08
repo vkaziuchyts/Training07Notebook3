@@ -15,9 +15,9 @@ public class NotebookLogic {
 		dao.save(n);
 	}
 
-	public void add(String title, String content, Date date) {
+	public void add(String title, String content) {
 
-		Note n = new Note(title, content, date);
+		Note n = new Note(title, content);
 
 		dao.save(n);
 	}
@@ -25,16 +25,12 @@ public class NotebookLogic {
 	public List<Note> find(String text) {
 		List<Note> result = new ArrayList<Note>();
 
-		
 		for (Note n : dao.allNotes()) {
 			if (isTextInNote(n, text)) {
 				result.add(n);
 			}
 		}
 
-		/*
-		 * for(int i=0; i<myNotes.size(); i++) { Note n = myNotes.get(i); }
-		 */
 		return result;
 
 	}
@@ -46,21 +42,14 @@ public class NotebookLogic {
 	public List<Note> find(Date date) {
 		List<Note> result = new ArrayList<Note>();
 
-		// NoteBookDao dao = new NoteBookDao();
-		List<Note> myNotes = dao.allNotes();
-
-		for (Note n : myNotes) {
-			if (isDateInNote(n, date)) {
+		for (Note n : dao.allNotes()) {
+			if (n.getD().getDay() == date.getDay() && n.getD().getMonth() == date.getMonth()
+					&& n.getD().getYear() == date.getYear()) {
 				result.add(n);
-				// ...d1.equals(d2);
 			}
 		}
 		return result;
 
-	}
-
-	private boolean isDateInNote(Note n, Date date) {
-		return n.getD().equals(date);
 	}
 
 	public List<Note> allNotes() {

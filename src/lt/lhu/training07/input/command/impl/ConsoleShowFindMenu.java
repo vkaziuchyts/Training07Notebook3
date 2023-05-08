@@ -14,7 +14,7 @@ public class ConsoleShowFindMenu implements Command {
 	private MenuSelectionSystem menuSystem = MenuBuilder.getInstance().getMenuSystem();
 	private Display display = MenuBuilder.getInstance().getDisplay();
 	private InputTerminal terminal = MenuBuilder.getInstance().getTerminal();
-	
+
 	@Override
 	public void execute() {
 		ConcreteMenu menu;
@@ -28,9 +28,8 @@ public class ConsoleShowFindMenu implements Command {
 			command.execute();
 
 		}
-		
+
 	}
-	
 
 	private int doChoose(ConcreteMenu m) {
 		int decision;
@@ -41,6 +40,4 @@ public class ConsoleShowFindMenu implements Command {
 		return decision;
 	}
 
-
-	
 }

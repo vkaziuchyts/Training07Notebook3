@@ -5,14 +5,14 @@ public enum MenuCommand {
 
 	CREATE_NEW_ITEM(3), FIND_BY_DATE(4), FIND_BY_CONTENT(5),
 
-	NO_MENU_ACTION(-1),  EXIT_CODE(0);
+	NO_MENU_ACTION(-1), EXIT_CODE(0), SHOW_ALL_NOTES(6);
 
 	private int consoleCode;
 
 	private MenuCommand(int code) {
 		consoleCode = code;
 	}
-	
+
 	public int getConsoleCode() {
 		return consoleCode;
 	}
@@ -27,9 +27,12 @@ public enum MenuCommand {
 			return CREATE_NEW_ITEM;
 		case 4:
 			return FIND_BY_DATE;
+		case 5:
+			return FIND_BY_CONTENT;
+		case 6:
+			return SHOW_ALL_NOTES;
 		default:
 			return NO_MENU_ACTION;
 		}
-
 	}
 }
